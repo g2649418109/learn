@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>express_get</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+<div id ="APP">
+	<form action="http://127.0.0.1:8081/process_post" method="POST">
+		First Name: <input type="text" name="first_name">  <br>
+		 
+		Last Name: <input type="text" name="last_name">
+		<input type="submit" value="Submit">
+	</form>
+	<button @click="clickone()">请求</button>
+	<table>
+		<thead>
+			<tr>
+			<td>name</td> 
+			<td>url</td>
+			<td>alexa</td>
+			<td>country</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+			<td>{{msg}}</td> 
+			<td></td>
+			<td></td>
+			<td></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+	
+</body>
+<script src="http://cdn.bootcss.com/vue/2.1.0/vue.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://cdn.bootcss.com/vue-resource/1.0.3/vue-resource.js" type="text/javascript" charset="utf-8"></script>
+<script>
+new Vue({
+	el: 'APP',
+	data: {
+		dat:[],
+		msg: 'hhhh'
+	},
+	methods: {
+		clickone: function () {
+			var xmlhttp;
+			if (window.XMLHttpRequest){
+				//  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+				xmlhttp=new XMLHttpRequest();
+			}
+			else{
+				// IE6, IE5 浏览器执行代码
+				xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xmlhttp.onreadystatechange=function(){
+			    if (xmlhttp.readyState==4 && xmlhttp.status==200)
+			    {
+			      var x = JSON.parse(xmlhttp.response);
+			      this.dat = x.data
+			    }
+		   }
+		   xmlhttp.open("GET","/showData",true);
+		   xmlhttp.send();
+		}
+	}
+})
+</script>
+</html>

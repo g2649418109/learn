@@ -1,0 +1,189 @@
+{
+  "ClassName": "TestScenario",
+  "Remark": "测试场景",
+  "TestScriptSet": {
+    "ClassName": "TestScriptSet",
+    "Remark": "TestScriptSet",
+    "ScriptList": [
+      {
+        "ClassName": "TestScript",
+        "Remark": "测试脚本",
+        "CommandList": [
+          {
+            "ClassName": "Command",
+            "Remark": "脚本命令行",
+            "No": 1,
+            "CommandLine": "navigate http://www.baidu.com"
+          }
+        ],
+        "ScriptName": "脚本11",
+        "LastModified": "2017-10-11 10:23:21",
+        "ID": "TS2543840441669484"
+      }
+    ],
+    "ID": "TSS6118234600850863",
+    "LastModified": "2017-10-17 14:02:52"
+  },
+  "ExpectedRTRequirement": {
+    "ClassName": "ExpectedRTRequirement",
+    "Remark": "ExpectedRTRequirement",
+    "DisplaySizeRequirement": {
+      "ClassName": "DisplaySizeRequirement",
+      "Remark": "显示幅面需求（显示幅面配置信息）",
+      "RequirementList": [
+        {
+          "ClassName": "DisplaySizeRequirement",
+          "Width": 1920,
+          "IsDefault": true,
+          "ID": "DS3385987563668474",
+          "Name": "1920W1080H",
+          "Remark": "显示幅面需求（显示幅面配置信息）",
+          "Height": 1080
+        }
+      ],
+      "LastModified": "2017-10-11 20:38:09",
+      "ID": "DSR1297087449404764"
+    },
+    "BrowserTypeRequirement": {
+      "ClassName": "BrowserTypeRequirement",
+      "Remark": "浏览器类型需求（浏览器类型配置信息)",
+      "RequirementList": [
+        {
+          "ClassName": "BrowserType",
+          "IsDefault": false,
+          "ID": "BT0000000000000001",
+          "Name": "Chrome",
+          "Remark": "浏览器类型"
+        },
+        {
+          "ClassName": "BrowserType",
+          "IsDefault": true,
+          "ID": "BT0000000000000002",
+          "Name": "Firefox",
+          "Remark": "浏览器类型"
+        },
+        {
+          "ClassName": "BrowserType",
+          "IsDefault": false,
+          "ID": "BT0000000000000003",
+          "Name": "IE11",
+          "Remark": "浏览器类型"
+        }
+      ],
+      "LastModified": "2017-10-11 10:27:56",
+      "ID": "BTR9514983998407848"
+    },
+    "NetworkEnvironmentRequirement": {
+      "ClassName": "NetworkEnvironmentRequirement",
+      "Remark": "网络环境需求（网络环境配置信息)",
+      "RequirementList": [
+        {
+          "ClassName": "NetworkEnvironment",
+          "DLBandwidth": 5120,
+          "Delay": 28,
+          "IsDefault": true,
+          "ID": "NE4950247589520019",
+          "Name": "Cable(5/1Mbps 28ms RTT)",
+          "PacketLossRate": 0.1,
+          "Remark": "网络环境",
+          "UpstreamBandwidth": 1024
+        },
+        {
+          "ClassName": "NetworkEnvironment",
+          "DLBandwidth": 1638,
+          "Delay": 300,
+          "IsDefault": false,
+          "ID": "NE5903007539271562",
+          "Name": "Mobile 3G(1.6Mbps/768Kbps 300ms RTT)",
+          "PacketLossRate": 0.1,
+          "Remark": "网络环境",
+          "UpstreamBandwidth": 768
+        }
+      ],
+      "LastModified": "2017-10-11 10:26:19",
+      "ID": "NER9451121358414526"
+    }
+  },
+  "TestcaseSet": {
+    "LastModified": "2017-10-17:14:24:34",
+    "TestcaseList": [
+      {
+        "DisplaySizeID": "DS3385987563668474",
+        "BrowserTypeID": "BT0000000000000002",
+        "TestcaseType": "Default",
+        "testLabel": "gggg666_脚本11_Firefox_1920W1080H_Cable",
+        "ClassName": "Testcase",
+        "ExcutionOrder": 1,
+        "IsDisabled": false,
+        "businessObjectType": "Testcase",
+        "ID": "TC0000000000000001",
+        "NetworkEnvironmentID": "NE4950247589520019",
+        "TestScriptID": "TS2543840441669484",
+        "Remark": "测试用例"
+      },
+      {
+        "DisplaySizeID": "DS3385987563668474",
+        "BrowserTypeID": "BT0000000000000001",
+        "TestcaseType": "Base",
+        "testLabel": "gggg666_脚本11_Chrome_1920W1080H_Cable",
+        "ClassName": "Testcase",
+        "ExcutionOrder": 2,
+        "IsDisabled": false,
+        "businessObjectType": "Testcase",
+        "ID": "TC0000000000000002",
+        "NetworkEnvironmentID": "NE4950247589520019",
+        "TestScriptID": "TS2543840441669484",
+        "Remark": "测试用例"
+      },
+      {
+        "DisplaySizeID": "DS3385987563668474",
+        "BrowserTypeID": "BT0000000000000003",
+        "TestcaseType": "Base",
+        "testLabel": "gggg666_脚本11_IE11_1920W1080H_Cable",
+        "ClassName": "Testcase",
+        "ExcutionOrder": 3,
+        "IsDisabled": false,
+        "businessObjectType": "Testcase",
+        "ID": "TC0000000000000003",
+        "NetworkEnvironmentID": "NE4950247589520019",
+        "TestScriptID": "TS2543840441669484",
+        "Remark": "测试用例"
+      },
+      {
+        "DisplaySizeID": "DS3385987563668474",
+        "BrowserTypeID": "BT0000000000000002",
+        "TestcaseType": "Composition",
+        "testLabel": "gggg666_脚本11_Firefox_1920W1080H_Mobile3G",
+        "ClassName": "Testcase",
+        "ExcutionOrder": 4,
+        "IsDisabled": false,
+        "businessObjectType": "Testcase",
+        "ID": "TC0000000000000004",
+        "NetworkEnvironmentID": "NE5903007539271562",
+        "TestScriptID": "TS2543840441669484",
+        "Remark": "测试用例"
+      }
+    ],
+    "ClassName": "TestcaseSet",
+    "businessObjectType": "TestcaseSet",
+    "ID": "TCS0000000000000001",
+    "Remark": "测试用例集"
+  },
+  "WptRTSetting": {
+    "ClassName": "WptRTSetting",
+    "Remark": "WPT运行时（运行时参数配置信息）",
+    "RunTimes": 1,
+    "ImageCompressionLevel": 50,
+    "IsOnlyFirstLoad": false,
+    "IsVideoCaptureOn": false,
+    "IsTcpdumpCaptureOn": true,
+    "IsPicutureCaptureOn": true,
+    "IsHttpHeaderSaveOn": true,
+    "IsPngHighResolutionOn": true,
+    "ID": "WRTS0000000000000001",
+    "LastModified": "2017-05-09:12:00:00"
+  },
+  "designer": "lish",
+  "name": "gggg666",
+  "LastModified": "2017-10-17 14:25:50"
+}

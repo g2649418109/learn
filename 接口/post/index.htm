@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>express_get</title>
+	<script src="//cdn.bootcss.com/vue/2.1.0/vue.js" type="text/javascript" charset="utf-8"></script>
+	<script src="//cdn.bootcss.com/vue-resource/1.0.3/vue-resource.js" type="text/javascript" charset="utf-8"></script>
+	<!-- <link rel="stylesheet" href=""> -->
+</head>
+<body>
+<div id ="APP">
+	<form action="/process_post" method="POST">
+		账号: <input type="text" name="user">  <br>
+		 
+		密码: <input type="password" name="password">
+		<input type="submit" value="Submit">
+	</form>
+	<button @click="clickone()">请求</button>
+	<table border="1">
+			<tr>
+			<th>number</th> 
+			<th>name</th> 
+			<th>url</th>
+			<th>alexa</th>
+			<th>country</th>
+			</tr>
+		<tbody v-if="aboutData.length!==0" v-for="(item,index) in aboutData">
+			<tr>
+			<td>{{index + 1}}</td> 
+			<td>{{item.name}}</td> 
+			<td>{{item.url}}</td>
+			<td>{{item.alexa}}</td>
+			<td>{{item.country}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+	
+</body>
+<script>
+new Vue({
+	el: '#APP',
+	data: {
+		aboutData:[],
+	},
+	created: function () {
+      this.clickone()
+    },
+	methods: {
+		clickone: function () {
+			var that = this; 
+	        that.$http({
+	         method: 'GET',
+	         url: '/showData' //这里填写刚刚后台设置的接口
+	        }).then(function(response){
+	         this.aboutData = response.data.data;
+	        },function (error) {
+	         console.log(error);
+	        })
+		}
+	}
+})
+</script>
+</html>
